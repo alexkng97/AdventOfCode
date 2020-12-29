@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 
 public class Day6 {
@@ -86,7 +84,6 @@ public class Day6 {
     public static int countYesInGroup(String groupAnswer){
 
         String[] individualAnswers = groupAnswer.split(" ");
-       // System.out.println(Arrays.toString(individualAnswers));
         char[] firstCharacters = individualAnswers[0].toCharArray();
 
         ArrayList<String> firstLetters = new ArrayList<>();
@@ -102,21 +99,16 @@ public class Day6 {
                 }
             }
         }
-        firstLetters.removeAll(toRemove);
 
-        //System.out.println(firstLetters.toString());
+        firstLetters.removeAll(toRemove);
 
         return firstLetters.size();
     }
 
 
     public static void main(String[] args) {
-        //System.out.println(countDistinctLetters("aabbcc"));
         ArrayList<String> answersByGroup = loadFile("AdventOfCode/day6input.txt");
-        //System.out.println(answersByGroup.toString());
-
         int[] groupDistinctAnswers = distinctLettersByGroup(answersByGroup);
-        //System.out.println(Arrays.toString(groupDistinctAnswers));
         System.out.println(sumOfArray(groupDistinctAnswers));
 
         int[] everyYes = countYes(answersByGroup);
