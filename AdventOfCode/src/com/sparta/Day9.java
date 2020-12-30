@@ -8,11 +8,9 @@ import java.util.Collections;
 public class Day9 {
     public static ArrayList<Long> loadFile(String url) {
         ArrayList<Long> result = new ArrayList<>();
-
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(url));
             String line;
-
             while ((line = bufferedReader.readLine()) != null) {
                 result.add(Long.parseLong(line));
             }
@@ -42,7 +40,6 @@ public class Day9 {
         //int start = preambleSize +1;
         ArrayList <Long> preamblePlusCheck;
         for(int i = preambleSize + 1 ; i < input.size(); i++){
-
             preamblePlusCheck = new ArrayList<>(input.subList(i - (preambleSize + 1), i));
 
             if(!isValid(preamblePlusCheck)){
@@ -69,7 +66,7 @@ public class Day9 {
             if(weaknessFound){
                 break;
             }
-            for(int j = i; j < indexOfInvalid -1; j++ ){
+            for(int j = i; j < indexOfInvalid -1; j++){
                 sum += input.get(j);
 
                 if (sum.equals(invalidNumber)) {
