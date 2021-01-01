@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Day9 {
+
     public static ArrayList<Long> loadFile(String url) {
         ArrayList<Long> result = new ArrayList<>();
         try {
@@ -33,7 +34,6 @@ public class Day9 {
         }
 
         return false;
-
     }
 
     public static Long invalidNumber(ArrayList<Long> input, int preambleSize){
@@ -61,11 +61,12 @@ public class Day9 {
         ArrayList<Long> contigousRange = new ArrayList<>();
 
         for(int i = 0; i < indexOfInvalid - 1; i++){
-            Long sum =0L;
+            Long sum = 0L;
 
             if(weaknessFound){
                 break;
             }
+
             for(int j = i; j < indexOfInvalid -1; j++){
                 sum += input.get(j);
 
@@ -83,10 +84,7 @@ public class Day9 {
                 }
 
             }
-
         }
-
-
 
         return Collections.min(contigousRange) + Collections.max(contigousRange) ;
 
@@ -105,8 +103,6 @@ public class Day9 {
         System.out.println(encryptionWeakness(test,invalidTestNumber));
 
         System.out.println(encryptionWeakness(input,invalidInputNumber));
-
-
 
     }
 }
