@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Day10 {
+public class Day11 {
 
     public static ArrayList<String> loadFile(String url) {
         ArrayList<String> result = new ArrayList<>();
@@ -92,7 +92,6 @@ public class Day10 {
 
         for(int i = 0; i < matrix.length; i++){
             for(int j = 0; j < matrix[i].length; j++){
-               // System.out.println(i + ", " + j + ": " + matrix[i][j] +" "+ countAdjacentOccupiedSeats(getAdjacentSeats(matrix,i,j)));
 
                 if(matrix[i][j] == 'L' && countAdjacentOccupiedSeats(getAdjacentSeats(matrix, i, j)) == 0) {
                     results[i][j] = '#';
@@ -143,7 +142,7 @@ public class Day10 {
 
 
     public static void main(String[] args) {
-        ArrayList<String> testLines = loadFile("AdventOfCode/day10test.txt");
+        ArrayList<String> testLines = loadFile("AdventOfCode/day11test.txt");
         char[][] testMatrix = toMatrix(testLines);
         printMatrix(testMatrix);
         System.out.println(Arrays.toString(getAdjacentSeats(testMatrix, 0, 0)));
@@ -151,8 +150,7 @@ public class Day10 {
 
         System.out.println(numberOfOccupiedSeatsAtStable(testMatrix));
 
-
-        char[][] seats = toMatrix(loadFile("AdventOfCode/day10input.txt"));
+        char[][] seats = toMatrix(loadFile("AdventOfCode/day11input.txt"));
 
         System.out.println(numberOfOccupiedSeatsAtStable(seats));
 
